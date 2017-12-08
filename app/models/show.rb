@@ -19,4 +19,8 @@ class Show < ActiveRecord::Base
     rating = self.lowest_rating
     self.find_by(rating: rating)
   end
+
+  def self.ratings_sum
+    self.sum('rating')
+  end 
 end
